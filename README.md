@@ -1,3 +1,5 @@
+![Java CI with Maven](https://github.com/domokosdaniel56/cosy/workflows/Java%20CI%20with%20Maven/badge.svg)
+
 # Cosy - Otthoni nyilvántartó rendszer
 ## Rendszer célja
 Az otthon található eszközök szabályos és jól nyomon követhető rendszerbe szedése és más egyéb ügyintézések folyamatának nyilvántartása.
