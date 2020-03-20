@@ -1,3 +1,7 @@
 .flex-container {
-  display: flex;
+	display: flex;
+}
+
+.room {
+	padding: 1em;
 }

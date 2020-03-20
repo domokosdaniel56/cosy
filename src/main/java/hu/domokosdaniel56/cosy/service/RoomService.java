@@ -17,4 +17,8 @@ public class RoomService {
 	public List<Room> getRooms() {
 		return repo.findAll();
 	}
+
+	public Room getRoom(long id) {
+		return repo.findById(id).get();
+	}
 }

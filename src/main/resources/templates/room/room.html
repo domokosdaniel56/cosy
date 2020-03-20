@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="main.css">
+<title>Cosy - Szoba</title>
+</head>
+<body>
+	<a href="/rooms" class="previous btn btn-primary">&laquo; Vissza</a>
+	<div class="card">
+		<h5 class="card-header" th:text="${room.name}">Name</h5>
+		<div class="card-body">
+			<h5 class="card-title" th:text="${room.name}">Name</h5>
+			<p>
+				<span>A szoba&nbsp;</span> <span th:text="${room.livingArea}">25</span>
+				<span>&nbsp;m<sup>2</sup></span>
+			</p>
+			<p class="card-text" th:text="${room.description}">With
+				supporting text below as a natural lead-in to additional content.</p>
+		</div>
+	</div>
+</body>
+</html>
