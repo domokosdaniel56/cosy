@@ -6,7 +6,23 @@ Az otthon található eszközök szabályos és jól nyomon követhető rendszer
 ## Környezet tulajdonságai
 A rendszer kezelő felülete egy URL-en keresztül elérhető szoftver, amely későbbiekben bármilyen eszközön jól kezelhető (mobil, tablet, stb.). Elsőnek számítógépes megvalósítás javasolt.
 ## Használt fejlesztői eszközök
-Ezt még nem tudom.
+
+Spring Tools 4
+https://spring.io/tools
+
+Thymeleaf - Templating engine
+https://www.thymeleaf.org/
+
+Spring Boot
+https://spring.io/projects/spring-boot
+
+Cards - Bootstrap
+https://getbootstrap.com/docs/4.4/components/card/
+
+Google charts
+https://developers.google.com/chart/interactive/docs/gallery
+
+
 ## Rendszer felépítése
 A weboldal egy főmenüről navigálná át a felhasználót az egyes nyilvántartásokhoz, funkciókhoz. Érdemes lenne az egyes alrendszereket modulokba gyűjteni, hogy a későbbiekben egy-egy új funkció hozzáadása a szoftverhez kényelmes maradjon. Az adatok tárolása egy adatbázison történik.
 Ötletek funkciókhoz:
