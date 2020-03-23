@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="main.css">
+<title>Cosy Bejelentkezés</title>
+</head>
+<body>
+	<h1>Cosy bejelentkezés</h1>
+	<form name="login" th:action="@{/login}" method="post">
+		<div th:if="${param.error}">Hibás adatokat adtál meg!</div>
+		<div>
+    		<label for="username"><b>Felhasználónév</b></label><br>
+    		<input type="text" name="username" required>
+		</div>
+		<div>
+    		<label for="password"><b>Jelszó</b></label><br>
+    		<input type="password" name="password" required>
+		</div>
+		<div><button type="submit">Bejelentkezés</button></div>
+    	<div><button type="submit">Regisztráció</button></div>
+    </form>
+	
+</body>
+</html>

@@ -17,11 +17,11 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 		auth
 		  .inMemoryAuthentication()
 		    .withUser("admin")
-		    .password("admin")
+		    .password("{noop}admin")
 		    .roles("ADMIN")
 		  .and()
 		    .withUser("user")
-		    .password("user")
+		    .password("{noop}user")
 		    .roles("USER");
 	}
 	
@@ -29,8 +29,10 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		  .authorizeRequests()
-		    .antMatchers(HttpMethod.GET, "/").permitAll()
+		    .anyRequest().authenticated()
 		  .and()
-		    .formLogin().permitAll();
+		    .formLogin()
+		    .loginPage("/login")
+		    .permitAll();
 	}
 }
