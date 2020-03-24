@@ -2,28 +2,51 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="main.css">
+<link href="floating-labels.css" rel="stylesheet">
 <title>Cosy Bejelentkezés</title>
 </head>
 <body>
-	<h1>Cosy bejelentkezés</h1>
-	<form name="login" th:action="@{/login}" method="post">
-		<div th:if="${param.error}">Hibás adatokat adtál meg!</div>
-		<div>
-    		<label for="username"><b>Felhasználónév</b></label><br>
-    		<input type="text" name="username" required>
+	<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Cosy</a>
+		<ul class="navbar-nav px-3">
+			<li class="nav-item text-nowrap"></li>
+		</ul>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-2">
+				<!-- 2 empty sections in the left -->
+			</div>
+			<div class="col-sm-8">
+				<form name="login" class="form-signin text-center"
+					th:action="@{/login}" method="post">
+					<h2 class="form-signin-heading">Cosy bejelentkezés</h2>
+					<div th:if="${param.error}">Hibás adatokat adtál meg!</div>
+					<div class="form-group ${param.error ? 'has-error' : ''}">
+						<label for="username"><b>Felhasználónév</b></label><br> <input
+							class="form-control" type="text" name="username" required>
+					</div>
+					<div class="form-group ${param.error ? 'has-error' : ''}">
+						<label for="password"><b>Jelszó</b></label><br> <input
+							class="form-control" type="password" name="password" required>
+					</div>
+					<div>
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Bejelentkezés</button>
+					</div>
+					<div>
+						<button class="btn btn-lg btn btn-success btn-block" type="submit">Regisztráció</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-2">
+				<!-- 2 empty sections in the right -->
+			</div>
 		</div>
-		<div>
-    		<label for="password"><b>Jelszó</b></label><br>
-    		<input type="password" name="password" required>
-		</div>
-		<div><button type="submit">Bejelentkezés</button></div>
-    	<div><button type="submit">Regisztráció</button></div>
-    </form>
-	
+	</div>
 </body>
 </html>
