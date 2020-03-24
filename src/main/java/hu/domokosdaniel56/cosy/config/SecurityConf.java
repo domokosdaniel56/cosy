@@ -29,11 +29,14 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		  .authorizeRequests()
-		    .antMatchers("/main.css").permitAll()
+		    .antMatchers("/main.css", "/h2/**").permitAll()
 		    .anyRequest().authenticated()
 		  .and()
 		    .formLogin()
 		    .loginPage("/login")
 		    .permitAll();
+		
+		http.csrf().disable();
+		http.headers().frameOptions().disable();
 	}
 }
