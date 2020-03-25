@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>Cosy bejelentkezés</h1>
-	<form name="login" th:action="@{/login}" method="post">
+	<form name="login" th:action="@{/login}" method="post" class="container">
 		<div th:if="${param.error}">Hibás adatokat adtál meg!</div>
 		<div>
     		<label for="username"><b>Felhasználónév</b></label><br>
