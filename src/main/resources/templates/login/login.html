@@ -23,16 +23,16 @@
 				<!-- 2 empty sections in the left -->
 			</div>
 			<div class="col-sm-8">
-				<form name="login" class="form-signin text-center" th:action="@{/login}" method="post">
+				<form name="login" class="form-signin text-center" th:action="@{/login}" th:object="${user}" method="post">
 					<h2 class="form-signin-heading">Cosy bejelentkezés</h2>
 					<div th:if="${param.error}">Hibás adatokat adtál meg!</div>
 					<div class="form-group ${param.error ? 'has-error' : ''}">
 						<label for="username"><b>Felhasználónév</b></label><br> <input
-							class="form-control" type="text" name="username" required>
+							class="form-control" type="text" th:field="*{username}" name="username" required>
 					</div>
 					<div class="form-group ${param.error ? 'has-error' : ''}">
 						<label for="password"><b>Jelszó</b></label><br> <input
-							class="form-control" type="password" name="password" required>
+							class="form-control" type="password" th:field="*{password}" name="password" required>
 					</div>
 					<div>
 						<button class="btn btn-lg btn-primary btn-block" type="submit">Bejelentkezés</button>
