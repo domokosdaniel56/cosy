@@ -17,8 +17,8 @@ public class UserService {
 		return repo.findAll();
 	}
 	
-	public User findUserbyUsernameAndPassword(String username, String password) {
-		return repo.findUserbyUsernameAndPassword(username, password);
+	public User findByUsernameAndPassword(String username, String password) {
+		return repo.findByUsernameAndPassword(username, password);
 	}
 	
 }
